@@ -1,9 +1,18 @@
-//对首页的网络请求
+import {request} from './request'
 
-import {request} from "./request";
 
-export function getHomeMultidata() {
+export function getHomeMultiData (){
   return request({
-    url: '/home/multidata'
+    url:'/home/multidata'
+  })
+}
+
+export function getHomeGoods(type,page){
+  return request({
+    url:'/home/data',
+    params:{
+      'type':type,
+      'page':page,
+    }
   })
 }

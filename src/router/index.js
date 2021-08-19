@@ -1,44 +1,40 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import {createRouter,createWebHistory} from 'vue-router'
 
-const Home = () => import('../views/home/Home')
-const Category = () => import('../views/category/Category')
-const Cart = () => import('../views/cart/Cart')
-const Profile = () => import('../views/profile/Profile')
-
-Vue.use(VueRouter)
-
-const routes = [
+const Home=()=>import('../views/home/Home')
+const Category=()=>import('../views/category/Category')
+const Cart=()=>import('../views/cart/Cart')
+const Profile=()=>import('../views/profile/Profile')
+const Details=()=>import('../views/details/Details')
+const routes=[
   {
-    path: '',
-    redirect: '/home'
+    path:'/',
+    redirect:'/home'
   },
   {
-    path: '/home',
-    component: Home
+    path:'/home',
+    component:Home,
   },
   {
-    path: '/category',
-    component: Category
+    path:'/category',
+    component: Category,
   },
   {
-    path: '/cart',
-    component: Cart
+    path:'/profile',
+    component: Profile,
   },
   {
-    path: '/profile',
-    component: Profile
+    path:'/cart',
+    component: Cart,
+  },
+  {
+    path:'/details',
+    component:Details
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  routes
+const router= createRouter({
+  routes,
+  history:createWebHistory('configure-admin')
 })
 
 export default router
-
-// const originalPush = VueRouter.prototype.push
-// VueRouter.prototype.push = function push(location) {
-//   return originalPush.call(this, location).catch(err => err)
-// }

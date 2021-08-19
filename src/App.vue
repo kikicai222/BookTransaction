@@ -1,21 +1,29 @@
 <template>
-  <div id="app">
+  <router-view v-slot="{ Component }">
+    <keep-alive exclude="Details">
+      <component :is=" Component " />
+    </keep-alive>
+  </router-view>
 
-    <main-tab-bar/>
-    <router-view></router-view>
-  </div>
+  <main-tab-bar/>
 </template>
 
 <script>
-  import MainTabBar from "components/content/mainTabbar/MainTabBar";
-  export default {
-    name: 'app',
-    components: {
-      MainTabBar
+import MainTabBar from "./components/content/tab-bar/MainTabBar";
+export default {
+  name: 'App',
+  data(){
+    return {
+
     }
+  },
+  components: {
+    MainTabBar
   }
+}
 </script>
 
 <style>
-  @import "assets/css/base.css";
+  @import './assets/css/base.css';
+
 </style>
