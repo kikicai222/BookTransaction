@@ -1,10 +1,13 @@
 import {createRouter,createWebHistory} from 'vue-router'
 
-const Home=()=>import('../views/home/Home')
-const Category=()=>import('../views/category/Category')
-const Cart=()=>import('../views/cart/Cart')
-const Profile=()=>import('../views/profile/Profile')
-const Details=()=>import('../views/details/Details')
+const Home = () =>import('../views/home/Home')
+const Category = () =>import('../views/category/Category')
+const Cart = () =>import('../views/cart/Cart')
+const Profile = () =>import('../views/profile/Profile')
+const Details = () =>import('../views/details/Details')
+const Publish = () =>import('../views/publish/Publish.vue')
+
+
 const routes=[
   {
     path:'/',
@@ -29,12 +32,16 @@ const routes=[
   {
     path:'/details',
     component:Details
+  },
+  {
+    path: '/publish',
+    component: Publish
   }
 ]
 
 const router= createRouter({
   routes,
-  history:createWebHistory('configure-admin')
+  history:createWebHistory()
 })
 
 export default router

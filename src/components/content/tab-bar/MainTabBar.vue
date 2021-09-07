@@ -23,6 +23,17 @@
         <div>分类</div>
       </template>
     </tab-bar-item>
+    <tab-bar-item path="/publish">
+      <template #item-icon>
+        <img src="../../../assets/img/tabbar/add.svg" alt="">
+      </template>
+      <template #item-icon-active>
+        <img src="../../../assets/img/tabbar/add_active.svg" alt="">
+      </template>
+      <template #item-text>
+        <div>发布</div>
+      </template>
+    </tab-bar-item>
     <tab-bar-item path="/cart">
       <template #item-icon>
         <img src="../../../assets/img/tabbar/cart.svg" alt="">
